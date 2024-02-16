@@ -10,6 +10,7 @@ brew install stow
 
 ```
 stow --target=$HOME zshrc
+stow --target=$HOME nvim
 ```
 
 
