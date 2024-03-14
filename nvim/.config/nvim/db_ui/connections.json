@@ -1,0 +1,1 @@
+[{"url": "postgresql://memory:memory_424242@127.0.0.1:5432/memory_development_intermarche", "name": "memory_development_intermarche"}, {"url": "sqlite:/Users/pwoestelandt/Library/Group%20Containers/JLMPQHK86H.com.culturedcode.ThingsMac/ThingsData-K0AJZ/Things%20Database.thingsdatabase/main.sqlite", "name": "Things db"}]

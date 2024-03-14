@@ -9,7 +9,14 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+      opts = {
+        colorscheme = "catppuccin-frappe",
+        showtabline = 0,
+      },
+    },
 
     {
       "christoomey/vim-tmux-navigator",
@@ -27,6 +34,23 @@ require("lazy").setup({
         { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
         { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
       },
+    },
+
+    { "kristijanhusak/vim-dadbod-ui" },
+    { "kristijanhusak/vim-dadbod-completion" },
+
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    -- Database
+    {
+      "tpope/vim-dadbod",
+      opt = true,
+      requires = {
+        "kristijanhusak/vim-dadbod-ui",
+        "kristijanhusak/vim-dadbod-completion",
+      },
+      config = function()
+        require("config.dadbod").setup()
+      end,
     },
 
     -- import any extras modules here
@@ -48,7 +72,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  --install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "catppuccin-frappe" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
