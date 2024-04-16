@@ -36,11 +36,11 @@ require("lazy").setup({
       },
     },
 
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
+    -- Database
     { "kristijanhusak/vim-dadbod-ui" },
     { "kristijanhusak/vim-dadbod-completion" },
-
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    -- Database
     {
       "tpope/vim-dadbod",
       opt = true,
