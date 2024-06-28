@@ -3,7 +3,17 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        ruby_lsp = false,
+        rubocop = {
+          name = "rubocop",
+          cmd = { "bundle", "exec", "rubocop" },
+        },
+        ruby_lsp = {
+          name = "ruby_lsp",
+        },
+        solargraph = {
+          name = "solargraph",
+          autostart = false,
+        },
       },
     },
   },
