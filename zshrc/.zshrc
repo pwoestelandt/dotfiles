@@ -115,7 +115,10 @@ export PATH="$HOME/.bin:$PATH"
 
 # recommended by brew doctor popov
 export PATH="/opt/homebrew/bin:$PATH"
-source /Users/pwoestelandt/.asdf/asdf.sh
+source /Users/paul.woestelandt/.asdf/asdf.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
