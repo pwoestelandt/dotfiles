@@ -76,6 +76,10 @@ return {
 				ruby_lsp = {
 					name = "ruby_lsp",
 				},
+
+				lua_ls = {
+					name = "lua-ls",
+				},
 			}
 			local ensure_installed = vim.tbl_keys(servers or {})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

@@ -20,10 +20,10 @@ return {
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 
 		local format_augroup = vim.api.nvim_create_augroup("format", { clear = true })
-		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 			group = format_augroup,
 			callback = function()
-				vim.lsp.buf.format()
+				vim.lsp.buf.format({ async = false })
 			end,
 		})
 	end,
