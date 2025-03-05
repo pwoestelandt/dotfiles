@@ -30,6 +30,12 @@ vim.opt.number = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.schedule(function()
+	vim.opt.clipboard = "unnamedplus"
+end)
+
+vim.opt.undofile = true
+
 vim.diagnostic.config({
 	virtual_text = true, -- Show inline errors
 	signs = true, -- Show signs in the gutter
