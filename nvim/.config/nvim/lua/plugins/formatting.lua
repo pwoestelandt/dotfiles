@@ -7,7 +7,7 @@ return {
 
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		local ensure_installed = { "stylua", "eslint_d", "rubocop" }
+		local ensure_installed = { "stylua", "eslint_d", "rubocop", "black" }
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 		local null_ls = require("null-ls")
@@ -22,6 +22,9 @@ return {
 				-- Ruby
 				null_ls.builtins.formatting.rubocop,
 				null_ls.builtins.diagnostics.rubocop,
+
+				-- Python
+				null_ls.builtins.formatting.black,
 			},
 		})
 

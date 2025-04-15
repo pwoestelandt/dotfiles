@@ -115,6 +115,7 @@ export PATH="$HOME/.bin:$PATH"
 
 # recommended by brew doctor popov
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$(pwd)/node_modules/.bin:$PATH"
 source /Users/paul.woestelandt/.asdf/asdf.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
