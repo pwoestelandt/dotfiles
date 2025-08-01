@@ -37,11 +37,21 @@ end)
 vim.opt.undofile = true
 
 vim.diagnostic.config({
-	virtual_text = true, -- Show inline errors
-	signs = true, -- Show signs in the gutter
-	underline = true, -- Underline errors
+	virtual_text = true, -- disable single-line virtual text
+	float = {
+		source = "always",
+		focusable = true,
+		border = "rounded",
+		max_width = 120, -- optional
+		wrap = true,
+	},
+	signs = true,
+	underline = true,
 	update_in_insert = false, -- Avoid updating while typing
 })
+
+-- Show all diagnostics on current line in floating window
+vim.api.nvim_set_keymap("n", "<Leader>d", ":lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
 
 -- replace ESC
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode" })

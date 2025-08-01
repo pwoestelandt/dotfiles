@@ -19,6 +19,7 @@ return {
 				"vimdoc",
 				"ruby",
 				"typescript",
+				"javascript",
 			},
 			auto_install = true,
 			highlight = {

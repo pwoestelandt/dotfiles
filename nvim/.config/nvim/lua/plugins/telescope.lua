@@ -2,13 +2,24 @@ return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
 		require("telescope").setup({
 			defaults = {
-				file_ignore_patterns = { ".git/" },
-				find_command = { "fd", "--type", "f", "--hidden", "--exclude", ".git" },
+				file_ignore_patterns = { ".git/", ".yarn/", "node_modules/" },
+				find_command = {
+					"fd",
+					"--type",
+					"f",
+					"--hidden",
+					"--exclude",
+					".git",
+					"--exclude",
+					".yarn",
+					"--exclude",
+					"node_modules",
+				},
 			},
 		})
 
